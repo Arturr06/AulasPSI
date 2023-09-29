@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OlaMundo", "OlaMundo\OlaMun
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Argumentos", "Argumentos\Argumentos.csproj", "{7A506852-A90A-4FA4-996B-356FB4E8BD06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TipoVarios", "TipoVarios\TipoVarios.csproj", "{E7CB71B7-1938-4B5C-9F4C-E447C95E53A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{7A506852-A90A-4FA4-996B-356FB4E8BD06}.Release|x64.Build.0 = Release|Any CPU
 		{7A506852-A90A-4FA4-996B-356FB4E8BD06}.Release|x86.ActiveCfg = Release|Any CPU
 		{7A506852-A90A-4FA4-996B-356FB4E8BD06}.Release|x86.Build.0 = Release|Any CPU
+		{E7CB71B7-1938-4B5C-9F4C-E447C95E53A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7CB71B7-1938-4B5C-9F4C-E447C95E53A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7CB71B7-1938-4B5C-9F4C-E447C95E53A0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E7CB71B7-1938-4B5C-9F4C-E447C95E53A0}.Debug|x64.Build.0 = Debug|Any CPU
+		{E7CB71B7-1938-4B5C-9F4C-E447C95E53A0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E7CB71B7-1938-4B5C-9F4C-E447C95E53A0}.Debug|x86.Build.0 = Debug|Any CPU
+		{E7CB71B7-1938-4B5C-9F4C-E447C95E53A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7CB71B7-1938-4B5C-9F4C-E447C95E53A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7CB71B7-1938-4B5C-9F4C-E447C95E53A0}.Release|x64.ActiveCfg = Release|Any CPU
+		{E7CB71B7-1938-4B5C-9F4C-E447C95E53A0}.Release|x64.Build.0 = Release|Any CPU
+		{E7CB71B7-1938-4B5C-9F4C-E447C95E53A0}.Release|x86.ActiveCfg = Release|Any CPU
+		{E7CB71B7-1938-4B5C-9F4C-E447C95E53A0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
