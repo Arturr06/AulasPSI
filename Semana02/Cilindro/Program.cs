@@ -21,7 +21,7 @@ namespace Cilindro
             double AreaS;
             //double pi = 3.1415926;
             
-            volume = Math.PI * Math.Pow(raio, raio) * altura;
+            volume = Math.PI * Math.Pow(raio, 2) * altura;
 
             AreaS = 2 * Math.PI * raio * (raio + altura);
 
