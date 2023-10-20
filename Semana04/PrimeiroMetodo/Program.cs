@@ -8,7 +8,9 @@ namespace Primeiro_Metodo
         {
            //ContarAte10();
            //Console.WriteLine();
-           //ContarAte10();
+           ContarAte10();
+
+           Console.WriteLine();
 
             int N;          
            Console.WriteLine("Introduza o número. ");
@@ -17,6 +19,8 @@ namespace Primeiro_Metodo
            N = Convert.ToInt32(Nr);
 
            ContarAteN(N);
+
+           Console.WriteLine();
           
            Console.WriteLine("Introduza o número. ");
            Nr = Console.ReadLine();
@@ -28,10 +32,7 @@ namespace Primeiro_Metodo
 
         private static void ContarAte10()
         {
-            for(int i = 1; i <= 10; i++)
-            {
-               Console.WriteLine(i); 
-            }
+            ContarAteN(10);
         }
 
         private static void ContarAteN(int N)
