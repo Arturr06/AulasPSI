@@ -2,7 +2,7 @@ namespace NPCPerks
 {
     public enum Classes
     {
-        Hero,
+        Hero = 1,
         Bandit,
         Warrior,
         Samurai,

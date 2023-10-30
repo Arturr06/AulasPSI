@@ -7,49 +7,38 @@ namespace NPCPerks
         static void Main(string[] args)
         {
             int npcs;
-            NPCTraits[] traits; 
-            Classes[] classe;
             NPCTraits especial;
-        
+
+            Classes[] classe;
+            NPCTraits[] traits;
+
+
             Console.WriteLine("Introduza o número de npc's: ");
             string nrNPC = Console.ReadLine();
 
             npcs = Convert.ToInt32(nrNPC);
 
-            traits = new NPCTraits[npcs];
             classe = new Classes[npcs];
+            traits = new NPCTraits[npcs]; 
             
             for(int i = 0; i < npcs; i++)
             {
-                for(int y = 0; y < Enum.GetValues(typeof(Classes)).Length; y++)
+                
+                for(int y = 1; y <= Enum.GetValues(typeof(Classes)).Length; y++)
                 {
-                    Console.WriteLine($"NPC{i} é um {(Classes)y}? ");
+                    classe[i] = MetClasses(y, i);
 
-                    string x = Console.ReadLine();
-
-                    if(x == "Sim")
+                    if(classe[i] != 0)
                     {
-                       classe[i] = (Classes)y;
-
-                       break; 
+                        break;
                     }
                 }
 
                 for(int u = 1; u <= Enum.GetValues(typeof(NPCTraits)).Length; u++)
                 {
-                    int b = 1 << u-1;
-
-                    Console.WriteLine($"NPC{i} tem {(NPCTraits)b}? ");
-
-                    string t = Console.ReadLine();
-
-                    if(t == "Sim")
-                    {
-
-                        traits[i] |= (NPCTraits)b;
- 
-                    }
+                    traits[i] |= MetTraits(u, i);
                 }
+                
 
                 Console.WriteLine($"NPC{i} é um {(classe[i])} e tem {(traits[i])}. ");
                 
@@ -63,6 +52,41 @@ namespace NPCPerks
                 Console.WriteLine();
             }
 
+        }
+
+        private static Classes MetClasses(int i, int j)
+        {
+            
+            Classes classe = 0;
+
+            Console.WriteLine($"NPC{j} é um {(Classes)i}? ");
+
+            string x = Console.ReadLine();
+    
+            if(x == "Sim")
+            {
+                classe = (Classes)i;
+            }
+
+            return classe;
+        }
+
+        private static NPCTraits MetTraits(int i, int j)
+        {
+            NPCTraits traits = 0;
+            
+            int b = 1 << i-1;
+
+            Console.WriteLine($"NPC{j} tem {(NPCTraits)b}? ");
+
+            string t = Console.ReadLine();
+
+            if(t == "Sim")
+            {
+                traits = (NPCTraits)b;
+            }
+
+            return traits;    
         }
     }
 }
