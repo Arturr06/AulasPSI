@@ -25,6 +25,26 @@ namespace OMeuJogo
         {
             vida = dano;
             if(vida < 0) vida = 0;
-        }            
+        }
+
+        public float GetVida()
+        {
+            if(vida <= 50) vida += 50;
+            return vida;
+        }
+
+        public void SetNome(string name)
+        {
+            int aux;
+
+            aux = name.Length;
+
+            if(name[0] == ' ' || name[aux] == ' ')
+            {
+                nome.Trim(' ');
+            }
+            
+            nome = name;
+        }
     }
 }
