@@ -7,7 +7,7 @@ namespace OMeuJogo
     {
         
         private string nome;
-        private int vida;  
+        private float vida;  
         
         public Inimigo(string nome)
         {        
@@ -15,5 +15,16 @@ namespace OMeuJogo
             vida = 100;
         }
 
+         public string GetNome()
+         {
+            return nome;
+         }
+            
+
+        public void Danificar(float dano)
+        {
+            vida = dano;
+            if(vida < 0) vida = 0;
+        }            
     }
 }
