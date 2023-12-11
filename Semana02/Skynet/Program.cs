@@ -22,7 +22,7 @@ namespace Skynet
                 Console.WriteLine("Não tenho resposta para isso.");
             }*/
 
-            switch (pergunta)
+            /*switch (pergunta)
             {
                 case "Qual o melhor clube do mundo?" : 
                     Console.WriteLine(resposta1);
@@ -36,8 +36,32 @@ namespace Skynet
                 default:
                     Console.WriteLine("Não tenho resposta para isso.");
                     break;
-            }
+            }*/
 
+            do 
+            {
+                if(pergunta == "EXIT"){
+                    
+                }
+
+                switch (pergunta)
+                {
+                    case "Qual o melhor clube do mundo?" : 
+                        Console.WriteLine(resposta1);
+                        break;
+                    case "Qual é a capital de Portugal?" :
+                        Console.WriteLine(resposta2);
+                        break;
+                    case "Qual é o maior pais do mundo?" :
+                        Console.WriteLine(resposta3);
+                        break;        
+                    default:
+                        Console.WriteLine("Não tenho resposta para isso.");
+                        break;
+                }
+            } while (pergunta != "EXIT");    
+            
+            
 
         }
     }
