@@ -22,33 +22,13 @@ namespace Unidades4X
 
             Console.WriteLine(" ");
 
-            Console.WriteLine("Primeira unidade Colonizadora: ");
-            Console.WriteLine(" ");
+            Console.WriteLine($"Primeira unidade Colonizadora \n {c1}");
 
-            Console.WriteLine($"Vida: {c1.Vida}");
-            Console.WriteLine($"Valor: {c1.Valor}");
-            Console.WriteLine(" ");
+            Console.WriteLine($"Segunda unidade Colonizadora \n {c2}");
 
-            Console.WriteLine("Segunda unidade Colonizadora: ");
-            Console.WriteLine(" ");
+            Console.WriteLine($"Primeira unidade Militar \n {m1}");
 
-            Console.WriteLine($"Vida: {c2.Vida}");
-            Console.WriteLine($"Valor: {c2.Valor}");
-            Console.WriteLine(" ");
-
-            Console.WriteLine("Primeira unidade Militar: ");
-            Console.WriteLine(" ");
-
-            Console.WriteLine($"Vida: {m1.Vida}");
-            Console.WriteLine($"Valor: {m1.Valor}");
-            Console.WriteLine(" ");
-
-            Console.WriteLine("Segunda unidade Militar: ");
-            Console.WriteLine(" ");
-
-            Console.WriteLine($"Vida: {m2.Vida}");
-            Console.WriteLine($"Valor: {m2.Valor}");
-            Console.WriteLine(" ");
+            Console.WriteLine($"Segunda unidade Militar \n {m2}");
             
         }
     }

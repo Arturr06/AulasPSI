@@ -20,5 +20,9 @@ namespace Unidades4X
             Console.WriteLine($"A unidade militar {um} foi danificada com {dano} dano.");
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + $" \n Poder de ataque: {PoderAtaque} e {XP} XP \n";
+        }
     }
 }

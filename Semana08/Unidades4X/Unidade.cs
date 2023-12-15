@@ -20,5 +20,10 @@ namespace Unidades4X
       {
         return a;
       }
+
+      public override string ToString()
+      {
+          return $"\n Vida: {Vida}" + $"\n Valor: {Valor} \n";
+      }
     }
 }
