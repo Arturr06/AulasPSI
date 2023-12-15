@@ -6,6 +6,8 @@ namespace Unidades4X
     {
         public int PoderAtaque {get; set;}
         public int XP {get; set;}
+        public override int Vida{get {return base.Vida + XP;}}
+        public override float Valor{get {return PoderAtaque + XP;}}
 
         public UnidadeMilitar(int movimento, int vida, int poderAtaque) : base(movimento, vida)
         {
@@ -17,5 +19,6 @@ namespace Unidades4X
         {
             Console.WriteLine($"A unidade militar {um} foi danificada com {dano} dano.");
         }
+
     }
 }

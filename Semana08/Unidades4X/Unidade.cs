@@ -2,10 +2,12 @@ using System;
 
 namespace Unidades4X
 {
-    public class Unidade 
+    public abstract class Unidade 
     {
-      private int movimento;
-        public int Vida{get; set;}
+        private int movimento;
+        public virtual int Vida{get; set;}
+
+        public abstract float Valor{get;}
 
        public Unidade(int movimento, int vida) 
        {
@@ -14,9 +16,9 @@ namespace Unidades4X
           Vida = vida;
        }
 
-      public void Mover(int a)
+      public int Mover(int a)
       {
-        Console.WriteLine(a);
+        return a;
       }
     }
 }
