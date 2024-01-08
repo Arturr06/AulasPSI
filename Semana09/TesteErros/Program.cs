@@ -28,6 +28,10 @@ namespace TesteErros
             {
                 Console.WriteLine("Ocorreu um erro desconhecido.");
             }
+            finally
+            {
+                Console.WriteLine("O programa chegou ao fim.");
+            }
             
             
         }
