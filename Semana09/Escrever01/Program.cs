@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace Escrever01
 {
@@ -7,7 +8,8 @@ namespace Escrever01
     {
         static void Main(string[] args)
         {
-            string[] a = new string[1000];
+            List<string> texto = new List<string>();
+            //string[] a = new string[1000];
             int b = 0;
 
             string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -18,14 +20,13 @@ namespace Escrever01
 
             do
             {
-                a[b] = Console.ReadLine();
+                texto.Add(Console.ReadLine());
 
                 b++;
-            }while(a[b - 1] != "");
+            }while(texto[b - 1] != "");
 
-            File.WriteAllLines(filePath, a);
             
-
+            File.WriteAllLines(filePath, texto);
         }
     }
 }

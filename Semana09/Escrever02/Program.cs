@@ -7,8 +7,8 @@ namespace Escrever02
     {
         static void Main(string[] args)
         {
-            string[] a = new string[1000];
-            int b = 0;
+            string a;
+            string s;
             
             string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string filePath = Path.Combine(desktop, "File.txt");
@@ -20,18 +20,27 @@ namespace Escrever02
 
             do
             {
-                a[b] = Console.ReadLine();
-
-                if(a[b] != "")
-                {
-                    dd.WriteLine(a[b]);
-                }
+                a = Console.ReadLine();
                 
-                b++;
+                if(a != "")
+                {
+                    dd.WriteLine(a);
+                }
               
-            }while(a[b - 1] != "");            
+            }while(a != "");            
             
             dd.Close();
+
+            StreamReader ss = new StreamReader(filePath);
+            
+            do
+            {
+                s = ss.ReadLine();
+                
+                Console.WriteLine(s);
+            }while(s != null);
+            
+            ss.Close();
         }
     }
 }
