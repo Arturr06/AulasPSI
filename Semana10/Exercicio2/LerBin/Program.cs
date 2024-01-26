@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 
-namespace LerBin
+namespace Exercicio2
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string filePath = Path.Combine(desktop, "File.bin");
