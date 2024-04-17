@@ -1,11 +1,18 @@
 using System;
-
+using System.Collections.Generic;
 
 namespace GestorAnimais
 {
-    public class Animal
+    public class Animal : IComparable<Animal>
     {
         public string Nome{get;}
+
+        public int CompareTo(Animal other)
+        {
+            if(other == null) return 1;
+            
+            return other.Peso - this.Peso;
+        }
 
         public int Peso{get; set;}
 

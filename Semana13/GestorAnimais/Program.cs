@@ -8,85 +8,93 @@ namespace GestorAnimais
         static void Main(string[] args)
         {
             List<Animal> animais = new List<Animal>();
-            string nome, b, pesominimostring, perguntapesominimo;
+            string nome = "";
+            string b, pesominimostring;
             int peso, pesominimoint;
 
             animais.Insert(0, new Animal("Macaco", 50));
             animais.Insert(1, new Animal("Gorila", 100));
+            animais.Sort();
 
-            
+
 
             do{
                 
-                Console.WriteLine("Insira o nome do animal.");
+                Console.WriteLine("Gestor de Animais: ");
+                Console.WriteLine("");
+                Console.WriteLine("Opção A: Inserir animal.");
+                Console.WriteLine("Opção B: Mostrar animais.");
+                Console.WriteLine("Opção C: Mostrar animais com peso minimo.");
+                Console.WriteLine("Opção D: Sair.");
+                Console.WriteLine("");
 
+
+                Console.WriteLine("Escolha uma das opções.");
                 nome = Console.ReadLine();
 
-                if(nome != "Mostrar")
+                if(nome == "A")
                 {
+                    Console.WriteLine("Insira o nome do animal.");
+
+                    nome = Console.ReadLine();
+
                     Console.WriteLine("Insira o peso do animal.");
 
-                b = Console.ReadLine();
+                    b = Console.ReadLine();
 
-                peso = Convert.ToInt32(b);
+                    peso = Convert.ToInt32(b);
 
-                Animal ab = new Animal(nome , peso);
+                    Animal ab = new Animal(nome , peso);
                 
-                animais.Add(ab);
+                    animais.Add(ab);
 
-                
-                }
-                
-            }while(nome != "Mostrar");
-            
-            Console.WriteLine("Vai querer listar os animais pelo peso minimo?");
+                    animais.Sort();
 
-            perguntapesominimo = Console.ReadLine();
-
-           
-
-            if(perguntapesominimo == "Sim")
-            {
-                
-                Console.WriteLine("Qual o peso minimo?");
-                pesominimostring = Console.ReadLine();
-                pesominimoint = Convert.ToInt32(pesominimostring);
-
-
-                List<Animal> listaanimaiscompesomaiorque = GetAnimaisComPesoMaiorQue(animais, pesominimoint);
-
-                foreach(Animal ax in listaanimaiscompesomaiorque)
+                }else if(nome == "B")
                 {
-                    Console.WriteLine($"Nome do animal: {ax}");
-                    Console.WriteLine($"Peso do animal: {ax.Peso}");
-                    Console.WriteLine("");
-                }
+                    foreach(Animal ax in animais)
+                        {
+                            Console.WriteLine($"Nome do animal: {ax}");
+                            Console.WriteLine($"Peso do animal: {ax.Peso}");
+                            Console.WriteLine("");
+                        }
 
-            }else if(perguntapesominimo == "Nao")
-            {
+                }else if(nome == "C")
+                {                        
+                    Console.WriteLine("Qual o peso minimo?");
+                    pesominimostring = Console.ReadLine();
+                    pesominimoint = Convert.ToInt32(pesominimostring);
+
+                    IEnumerable<Animal> listaanimaiscompesomaiorque = GetAnimaisComPesoMaiorQue(animais, pesominimoint);
+
+                    foreach(Animal ax in listaanimaiscompesomaiorque)
+                        {
+                            Console.WriteLine($"Nome do animal: {ax}");
+                            Console.WriteLine($"Peso do animal: {ax.Peso}");
+                            Console.WriteLine("");
+                        }
+                        
+                }else if(nome == "D")
+                {
+                    System.Environment.Exit(1);
+                }
                 
-                foreach(Animal ax in animais)
-            {
-                Console.WriteLine($"Nome do animal: {ax}");
-                Console.WriteLine($"Peso do animal: {ax.Peso}");
-                Console.WriteLine("");
-            }
-            }
+            }while(nome != "Sair");
+            
+            
         }
 
-        public static List<Animal> GetAnimaisComPesoMaiorQue(List<Animal> a, int pesominimoint)
+        public static IEnumerable<Animal> GetAnimaisComPesoMaiorQue(List<Animal> a, int pesominimoint)
         {
-            List<Animal> Pesominimo = new List<Animal>();
 
             foreach(Animal l in a)
             {
                 if(l.Peso > pesominimoint)
                 {
-                    Pesominimo.Add(l);
+                    yield return l;
                 }
             }            
             
-            return Pesominimo;
         }
     }
 }
