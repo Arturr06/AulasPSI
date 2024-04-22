@@ -38,6 +38,7 @@ namespace LINQLeitor
 
             Console.WriteLine("Existe alguma linha com mais que 120 caracteres? " + linha120);
 
+            /*
             IEnumerable<string> primeirapalavra = 
                 from x in lerlinhas
                 where x.Contains("Y")
@@ -46,7 +47,19 @@ namespace LINQLeitor
             foreach (string ax in primeirapalavra)
             {
                 Console.WriteLine(ax);
-            }
+            } */
+
+            
+
+            IEnumerable<string> primeirapalavra = 
+                from x in lerlinhas
+                where !string.IsNullOrEmpty(x) && x[0] == 'T'
+                select x.Split(delimitador)[0];
+
+            foreach (string ax2 in primeirapalavra)
+            {
+                Console.WriteLine(ax2);
+            }    
         }
     }
 }
